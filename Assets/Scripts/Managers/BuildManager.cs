@@ -32,7 +32,7 @@ public class BuildManager : MonoBehaviour {
 
     public void SelectItem(BuildItem bi)
     {
-        Debug.Log("Selectiong item " + bi.DisplayName);
+        Debug.Log("Selecting item " + bi.DisplayName);
         selectedItem = bi;
     }
 
