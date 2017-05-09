@@ -113,6 +113,7 @@ namespace Andras.ModTools
             catch (NLua.Exceptions.LuaException e)
             {
                 Debug.LogError(e.Message);
+                Console.LogError(e.Message);
             }
         }
 

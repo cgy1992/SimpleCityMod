@@ -6,12 +6,15 @@ using UnityEngine;
 public class CameraController : MonoBehaviour
 {
     public int speed;
-
+    public float scrollSpeed;
     Camera cam;
+
+    float camFOV;
 
 	void Start ()
     {
         cam = GetComponent<Camera>();
+        camFOV = cam.fieldOfView;
 	}
 	
 	void Update ()
@@ -25,6 +28,17 @@ public class CameraController : MonoBehaviour
             transform.Translate(Vector3.up * speed * Time.deltaTime);
         if (Input.GetKey("s"))
             transform.Translate(Vector3.down * speed * Time.deltaTime);
+
+        if (Input.GetAxis("Mouse ScrollWheel") < 0)
+            camFOV += scrollSpeed;
+
+        if (Input.GetAxis("Mouse ScrollWheel") > 0)
+            camFOV -= scrollSpeed;
+
+
+        camFOV = Mathf.Clamp(camFOV, 3, 120);
+
+        cam.fieldOfView = Mathf.Lerp(cam.fieldOfView, camFOV, 0.2f);
 
         transform.LookAt(GameManager.centerObject.gameObject.transform);
     }

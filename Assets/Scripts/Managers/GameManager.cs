@@ -7,6 +7,10 @@ public class GameManager : MonoBehaviour {
 
     public static int population;
     public static int money;
+    public static int round;
+
+    public static int populationNextRound;
+    public static int moneyNextRound; //IMPLEMENT
 
     public static bool hasChanged = false;
 
@@ -38,7 +42,6 @@ public class GameManager : MonoBehaviour {
     {
         buildManager = GameObject.Find("_BuildManager").GetComponent<BuildManager>();
     }
-
     public static void LoadBuildItems()
     {
         buildItems = ModController.LoadBuildItems();
@@ -57,7 +60,10 @@ public class GameManager : MonoBehaviour {
 
         if (buildItems.Count == 0)
             Debug.Log("THERE ARE NO BUILDITEMS");
+    }
 
-
+    public static void HasChanged()
+    {
+        hasChanged = true;
     }
 }

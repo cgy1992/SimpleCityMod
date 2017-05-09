@@ -26,7 +26,6 @@ public class BuildManager : MonoBehaviour {
                 Debug.Log(e.Message);
                 throw;
             }
-
         }
     }
 
