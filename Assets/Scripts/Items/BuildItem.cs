@@ -33,9 +33,9 @@ public class BuildItem
 
     public void OnNextRound()
     {
-        ModManager.OnNextRound();
-
-        Debug.Log(Scale);
+        ModController mc;
+        ModController.modContollers.TryGetValue(FileName, out mc);
+        mc.Call("OnNextRound");
     }
 
     public void LoadDisplayImage(string path)

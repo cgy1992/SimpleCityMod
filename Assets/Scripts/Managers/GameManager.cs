@@ -57,5 +57,7 @@ public class GameManager : MonoBehaviour {
 
         if (buildItems.Count == 0)
             Debug.Log("THERE ARE NO BUILDITEMS");
+
+
     }
 }
