@@ -25,5 +25,7 @@ public class CameraController : MonoBehaviour
             transform.Translate(Vector3.up * speed * Time.deltaTime);
         if (Input.GetKey("s"))
             transform.Translate(Vector3.down * speed * Time.deltaTime);
+
+        transform.LookAt(GameManager.centerObject.gameObject.transform);
     }
 }

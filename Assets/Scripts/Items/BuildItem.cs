@@ -35,7 +35,7 @@ public class BuildItem
     {
         ModManager.OnNextRound();
 
-        Debug.Log("NEXT ROUND 2");
+        Debug.Log(Scale);
     }
 
     public void LoadDisplayImage(string path)

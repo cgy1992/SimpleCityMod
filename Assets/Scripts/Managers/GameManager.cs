@@ -14,20 +14,26 @@ public class GameManager : MonoBehaviour {
 
     public static UIManager uiManager;
     public static BuildManager buildManager;
+    public static CenterObject centerObject;
 
     void Start()
     {
         LoadBuildManager();
         LoadUIManager();
 
+        LoadCenterObject();
+
         LoadBuildItems();
     }
 
+    public static void LoadCenterObject()
+    {
+        centerObject = GameObject.Find("_CenterObject").GetComponent<CenterObject>();
+    }
     public static void LoadUIManager()
     {
         uiManager = GameObject.Find("_UIManager").GetComponent<UIManager>();
     }
-
     public static void LoadBuildManager()
     {
         buildManager = GameObject.Find("_BuildManager").GetComponent<BuildManager>();

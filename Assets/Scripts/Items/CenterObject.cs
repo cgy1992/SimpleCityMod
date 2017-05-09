@@ -5,20 +5,29 @@ using UnityEngine;
 public class CenterObject : MonoBehaviour
 {
 
-    List<BuildItemMono> bim = new List<BuildItemMono>();
+    List<BuildItemMono> bims = new List<BuildItemMono>();
+
+    Vector3 location;
 
     void Update()
     {
         if (GameManager.hasChanged)
         {
-            bim.Clear();
+            bims.Clear();
 
             GameObject[] go = GameObject.FindGameObjectsWithTag("BuildItem");
 
             for (int i = 0; i < go.Length; i++)
-               bim.Add(  go[i].GetComponent<BuildItemMono>());
+            {
+                bims.Add(go[i].GetComponent<BuildItemMono>());
+                location += go[i].transform.position;
+            }
 
+            location /= go.Length;
         }
+
+
+        transform.position = Vector3.Slerp(transform.position, location, 0.2f);
     }
 
 }

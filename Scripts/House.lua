@@ -2,12 +2,13 @@ import 'System'
 import 'UnityEngine'
 
 buildItem:Init();
-buildItem:LoadDisplayImage("C:/Users/Marcus/Desktop/SEXYBOII.png");
+--buildItem:LoadDisplayImage("");
 
 local addAmount = 500;
 
 buildItem.BuildCost = 500;
 buildItem.DisplayName = "House";
+buildItem.Scale = Vector3(69,1,1) 
 
 function OnStart()
 	--Debug.Log("Start")
