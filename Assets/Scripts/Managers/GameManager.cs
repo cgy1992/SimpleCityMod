@@ -20,6 +20,10 @@ public class GameManager : MonoBehaviour {
     public static BuildManager buildManager;
     public static CenterObject centerObject;
 
+    public static bool isPaused;
+
+    public static bool isInGame;
+
     void Start()
     {
         LoadBuildManager();
