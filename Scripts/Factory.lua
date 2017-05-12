@@ -12,7 +12,7 @@ buildItem.Scale = Vector3(69,1,1)
 
 function OnStart()
 	--Debug.Log("Start")
-end 
+end
 
 function OnUpdate()
 	--Debug.Log("Update")
