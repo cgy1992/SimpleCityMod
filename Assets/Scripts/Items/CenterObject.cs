@@ -26,7 +26,6 @@ public class CenterObject : MonoBehaviour
             location /= go.Length;
         }
 
-
         transform.position = Vector3.Slerp(transform.position, location, 0.2f);
     }
 

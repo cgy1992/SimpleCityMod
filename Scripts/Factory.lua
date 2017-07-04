@@ -8,6 +8,7 @@ local addAmount = 500;
 
 buildItem.BuildCost = 5000;
 buildItem.DisplayName = "Factory";
+buildItem.ModelPath = "housemodel.obj";
 buildItem.Scale = Vector3(69,1,1) 
 
 function OnStart()

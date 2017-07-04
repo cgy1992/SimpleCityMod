@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -20,13 +21,19 @@ public class BuildManager : MonoBehaviour {
             try
             {
                 GameManager.uiManager.SetupBuildItem(item);
+                GameManager.buildManager.SetupMesh(item);
             }
-            catch (System.Exception e)
+            catch (Exception e)
             {
                 Debug.Log(e.Message);
                 throw;
             }
         }
+    }
+
+    private void SetupMesh(BuildItem item)
+    {
+        item.LoadMesh();
     }
 
     public void SelectItem(BuildItem bi)

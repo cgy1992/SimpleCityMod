@@ -32,6 +32,8 @@ public class GameManager : MonoBehaviour {
         LoadCenterObject();
 
         LoadBuildItems();
+
+        Instantiate(buildItems[0].Model, Vector3.zero, Quaternion.identity);
     }
 
     public static void LoadCenterObject()

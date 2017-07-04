@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using Andras.ModTools;
 using System;
 using System.IO;
@@ -15,6 +13,7 @@ public class BuildItem
     public int SellCost { get; set; }
 
     public GameObject Model { get; set; }
+    public string ModelPath { get; set; }
     public Vector3 Scale { get; set; }
 
     public bool isActive = false;
@@ -50,5 +49,10 @@ public class BuildItem
         {
             Debug.LogError(e.Message);
         }
+    }
+
+    public void LoadMesh()
+    {
+        Model.GetComponent<MeshFilter>().mesh = ObjImporter.ImportFile(ModelPath);
     }
 }

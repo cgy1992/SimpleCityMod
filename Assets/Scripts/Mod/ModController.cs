@@ -70,13 +70,11 @@ namespace Andras.ModTools
 
         public ModController(string _fileName)
         {
-
             mod = LoadMod(_fileName);
             CreateModContoller();
 
             if (mods == null || mods.Count == 0)
                 LoadMods();
-
         }
 
         static public List<BuildItem> LoadBuildItems()
